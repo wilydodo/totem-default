@@ -61,6 +61,20 @@
         };
     };
 
+    behaviors {
+        Hm: Hm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <139>;
+            require-prior-idle-ms = <(-1)>;
+            flavor = "tap-preferred";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -84,7 +98,7 @@
 
             bindings = <
        &kp Q       &kp W       &kp F        &kp P        &kp G          &kp J        &kp L        &kp U        &kp Y       &kp SEMI
-       &mt LGUI A  &mt LALT R  &mt LCTRL S  &mt LSHFT T  &kp D          &kp H        &mt RSHFT N  &mt RCTRL E  &mt RALT I  &mt RGUI O
+       &Hm LGUI A  &Hm LALT R  &Hm LCTRL S  &Hm LSHFT T  &kp D          &kp H        &Hm RSHFT N  &Hm LCTRL E  &Hm RALT I  &Hm RGUI O
 &kp Q  &kp Z       &kp X       &kp C        &kp V        &kp B          &kp K        &kp M        &kp COMMA    &kp DOT     &kp FSLH    &kp BSLH
                                &kp DEL      &kp SPACE    &lt 0 SPACE    &lt 0 ENTER  &kp ENTER    &kp BSPC
             >;
