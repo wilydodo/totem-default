@@ -11,6 +11,7 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 #define BASE 0
@@ -91,9 +92,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q        &kp W           &kp F           &kp P        &kp B          &kp J        &kp L        &kp U            &kp Y            &kp SEMI
-       &Hm LCTRL A  &Hm LEFT_GUI R  &Hm LEFT_ALT S  &Hm LSHFT T  &kp G          &kp M        &Hm RSHFT N  &Hm RIGHT_ALT E  &Hm RIGHT_GUI I  &Hm LCTRL O
-&kp Q  &kp Z        &kp X           &kp C           &kp D        &kp V          &kp K        &kp H        &kp COMMA        &kp DOT          &kp FSLH     &kp BSLH
+       &kp Q        &kp W           &kp E           &kp R        &kp T          &kp Y        &kp U        &kp I            &kp O            &kp P
+       &Hm LCTRL A  &Hm LEFT_GUI S  &Hm LEFT_ALT D  &Hm LSHFT F  &kp G          &kp H        &Hm RSHFT J  &Hm RIGHT_ALT E  &Hm RIGHT_GUI I  &Hm LCTRL SEMICOLON
+&kp Q  &kp Z        &kp X           &kp C           &kp V        &kp B          &kp N        &kp M        &kp COMMA        &kp DOT          &kp FSLH             &kp BSLH
                                     &kp DEL         &kp SPACE    &lt 1 SPACE    &lt 2 SPACE  &kp ENTER    &kp BSPC
             >;
         };
@@ -106,10 +107,10 @@
 
         layer_1 {
             bindings = <
-       &kp GRAVE  &none   &none   &none   &kp LBKT    &kp RBKT  &none   &none   &kp MINUS  &kp EQUAL
-       &kp N1     &kp N2  &kp N3  &kp N4  &kp N5      &kp N6    &kp N7  &kp N8  &kp N9     &kp N0
-&none  &none      &none   &none   &none   &none       &none     &none   &none   &none      &kp BSLH   &kp BSLH
-                          &trans  &trans  &trans      &trans    &trans  &trans
+       &kp GRAVE  &none   &none   &none   &kp LBKT    &kp RBKT      &none           &none   &kp MINUS  &kp EQUAL
+       &kp N1     &kp N2  &kp N3  &kp N4  &kp N5      &kp N6        &kp N7          &kp N8  &kp N9     &kp N0
+&none  &none      &none   &none   &none   &none       &none         &none           &none   &none      &kp BSLH   &kp BSLH
+                          &trans  &trans  &trans      &bt BT_SEL 0  &bt BT_CLR_ALL  &trans
             >;
         };
 
